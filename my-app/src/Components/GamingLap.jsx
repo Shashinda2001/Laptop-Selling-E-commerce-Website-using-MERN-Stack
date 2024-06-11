@@ -5,8 +5,12 @@ import ExampleCarouselImage3 from '../Images/l1_.jpg';
 function GamingLap() {
     return ( 
         <div className="container mt-4 pt-5 ">
+<div className="display-5  text-center bg-light">
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus.</p>
+  <p className="lead ">Best Gaming Laptops..</p>
+  </div>
 
-            <p className="lead fw-bold">Best Gaming Laptops..</p>
+            
         <div className="row lg-justify-content-start md-justify-content-center align-items-center">
         <div className="col-12 col-md-4 mt-3 d-flex justify-content-center">
   <Card style={{ width: '18rem' }}>

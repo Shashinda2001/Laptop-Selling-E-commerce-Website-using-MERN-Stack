@@ -22,7 +22,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/Home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             {/* <Nav.Link href="/link"></Nav.Link> */}
             <Nav.Link href="/About">About</Nav.Link>
             <Nav.Link href="/profile" className='d-lg-none'>profile</Nav.Link>
@@ -31,8 +31,8 @@ function NavBar() {
            
 
             <NavDropdown title="Sign" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/Sign">Sign</NavDropdown.Item>
-              <NavDropdown.Item href="/Login">
+              <NavDropdown.Item href="/SignForm">Sign</NavDropdown.Item>
+              <NavDropdown.Item href="/LoginForm">
                 Login
               </NavDropdown.Item>
               {/* <NavDropdown.Item href="/Home">LogOut</NavDropdown.Item>
