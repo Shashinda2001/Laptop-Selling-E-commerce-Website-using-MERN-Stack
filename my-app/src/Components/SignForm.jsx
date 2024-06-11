@@ -12,8 +12,8 @@ function SignForm() {
             <div className="row justify-content-center align-items-center">
                 <div className="col-12 col-md-8">
 
-                    <div className="display-4 fw-bold text-center">
-                        <p>Login</p>
+                    <div className="display-6 fw-bold text-center">
+                        <p>Sign in to your account to get started.</p>
                     </div>
                     <div className=''>
                         <Form>
@@ -39,6 +39,7 @@ function SignForm() {
 
                             </Form.Group>
 
+
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label htmlFor="inputPassword5">Password</Form.Label>
                                 <InputGroup className="mb-3">
@@ -55,6 +56,8 @@ function SignForm() {
                                     and must not contain spaces, special characters, or emoji.
                                 </Form.Text>
                             </Form.Group>
+
+                            
                             <div className='justify-content-center align-items-center text-center'>
                                 <Button variant="primary" type="submit">
                                     Submit
