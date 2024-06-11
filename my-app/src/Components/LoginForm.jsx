@@ -13,8 +13,8 @@ function LoginForm() {
                 <div className="col-12 col-md-8">
 
                     <div className="display-4 fw-bold text-center">
-                    <p className="lead">Lorem ipsum dolor, sit amet consectetur adipis
-                    icing elit. Atque soluta nostrum perspiciatis vitae officia quod voluptatum quaerat eius pariatur. Quos.</p>
+                    <p className="lead">Welcome to our platform! We're glad to have you here. Please enter your credentials
+                         to access your account and explore everything we have to offer.</p>
                         <p>Login</p>
                        
                     </div>
