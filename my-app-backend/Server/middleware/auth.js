@@ -14,7 +14,7 @@ try{
   })
 
   if(!user){
-    throw new Error();
+    // throw new Error();
     return res.status(401).send({ error: "User not found" }); 
   }
 
