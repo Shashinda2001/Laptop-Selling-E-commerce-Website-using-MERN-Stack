@@ -8,11 +8,33 @@ import Button from 'react-bootstrap/Button';
 import { Badge} from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { FaUserCircle } from 'react-icons/fa';
+import LogoutModel from './LogoutModel';
+import Cookies from 'js-cookie';
+import { useState, useEffect } from 'react';
+// import { RiH1 } from 'react-icons/ri';
+
+
 
 
 function NavBar() {
     var userName;
     var itemCount;
+    const t = Cookies.get('token');
+    const [token, setToken] = useState(null);
+    
+    useEffect(() => {
+      if (!t) {
+        console.log('No token found, please login.');
+        
+        return;
+    }
+    else{
+      setToken(t);
+    }
+
+    }, [token,t]); // Call getinfo() only when token changes
+
+  
 
 
   return (
@@ -37,9 +59,10 @@ function NavBar() {
               </NavDropdown.Item>
               {/* <NavDropdown.Item href="/Home">LogOut</NavDropdown.Item>
               <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="/Home">
-              LogOut
-              </NavDropdown.Item>
+            <NavDropdown.Item href="">
+  {token ? <LogoutModel /> : null}
+</NavDropdown.Item>
+
             </NavDropdown>
 
            
