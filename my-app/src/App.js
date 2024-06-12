@@ -5,6 +5,7 @@ import LoginForm from './Components/LoginForm';
 import HomePage from './Pages/HomePage';
 import SignForm from './Components/SignForm';
 import About from './Pages/About';
+import Profile from './Pages/Profile';
  
 import {Routes, Route } from 'react-router-dom';
 
@@ -23,6 +24,8 @@ function App() {
         <Route path="/LoginForm" element={ <LoginForm/>}/>
         <Route path="/SignForm" element={ <SignForm/>}/>
         <Route path="/About" element={ <About/>}/>
+        <Route path="/Profile" element={ <Profile/>}/>
+
 
       </Routes>
     
