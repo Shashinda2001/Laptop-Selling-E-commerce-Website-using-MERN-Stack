@@ -1,11 +1,46 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import React from 'react';
+ 
 import InputGroup from 'react-bootstrap/InputGroup';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function SignForm() {
+
+    const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
+
+
+    const navigate = useNavigate();
+
+    const handleSubmit = async (event)=>{
+
+        const url="http://localhost:4000/users";
+    
+        event.preventDefault();
+    
+        try{
+    
+          const submitData={
+            name:userName,
+            
+            email:userEmail,
+            password:userPassword
+          };
+          const response =await axios.post(url,submitData);
+          console.log(response);
+
+          navigate('/LoginForm');
+        }
+        catch(error){
+    console.log(error);
+        }
+      }
+
     return (
 
         <div className="container my-5  justify-content-center align-items-center">
@@ -16,13 +51,16 @@ function SignForm() {
                         <p>Sign in to your account to get started.</p>
                     </div>
                     <div className=''>
-                        <Form>
+                        <Form onSubmit={handleSubmit}>
 
                             <Form.Group className="mb-3" controlId="formBasicName">
                                 <Form.Label>User Name</Form.Label>
                                 <InputGroup className="mb-3">
                                     <InputGroup.Text id="basic-addon1"> <i className="fas fa-user"></i></InputGroup.Text>
-                                    <Form.Control type="text" placeholder="Enter Your Name" />
+                                    <Form.Control type="text"  name='userName' placeholder="Enter Your Name" value={userName}
+                                                onChange={(event) => {
+                                                    setUserName(event.target.value)
+                                                }}/>
                                 </InputGroup>
 
                             </Form.Group>
@@ -31,7 +69,10 @@ function SignForm() {
                                 <Form.Label>Email address</Form.Label>
                                 <InputGroup className="mb-3">
                                     <InputGroup.Text id="basic-addon1">  <i className="fas fa-envelope"></i></InputGroup.Text>
-                                    <Form.Control type="email" placeholder="Enter email" />  </InputGroup>
+                                    <Form.Control type="email"  name='userEmail' placeholder="Enter email" value={userEmail}
+                                            onChange={(event) => {
+                                                setUserEmail(event.target.value)
+                                            }}/>  </InputGroup>
                                 <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
                                 </Form.Text>
@@ -48,6 +89,11 @@ function SignForm() {
                                         type="password"
                                         id="inputPassword5"
                                         aria-describedby="passwordHelpBlock"
+                                         name='userPassword'
+                                         value={userPassword}
+                                         onChange={(event) => {
+                                             setUserPassword(event.target.value)
+                                         }}
                                     />
                                 </InputGroup>
 
