@@ -6,10 +6,12 @@ import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Footer from "../Components/Footer";
+import LogoutModel from '../Components/LogoutModel';
 
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import React, { useState, useEffect } from 'react';
+import {useNavigate } from 'react-router-dom';
 
 
 
@@ -18,11 +20,18 @@ function Profile() {
     const [userName, setUserName] = useState('not');
     const [userEmail, setUserEmail] = useState('not');
     const token = Cookies.get('token');
+
+    const navigate = useNavigate();
+
+  
   
     useEffect(() => {
+        
         const getinfo = async () => {
+            
             if (!token) {
                 console.log('No token found, please login.');
+                navigate('/LoginForm');
                 return;
             }
             
@@ -42,7 +51,7 @@ function Profile() {
         };
 
         getinfo();
-    }, [token]); // Call getinfo() only when token changes
+    }, [token,navigate]); // Call getinfo() only when token changes
 
 
     return (  
@@ -70,7 +79,8 @@ function Profile() {
 
         <Col xs={10} md={7} className="justify-content-between align-items-center text-center my-3">
         <Button variant="warning">Edit profile</Button>{' '}
-      <Button variant="danger" className="mx-3">Logout</Button>{' '}
+        <LogoutModel/>
+      
         </Col>
 
         

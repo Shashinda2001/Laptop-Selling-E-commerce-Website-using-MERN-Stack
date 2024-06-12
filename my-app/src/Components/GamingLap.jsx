@@ -12,10 +12,7 @@ function GamingLap() {
     cursor: 'pointer', // Optional: add pointer cursor on hover
     boxShadow: isHovered ? '0 8px 16px rgba(0, 0, 0, 0.3)' : '0 4px 8px rgba(0, 0, 0, 0)',
   };
-
-  const cardStyleHover = {
-    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
-  };
+ 
 
 
 
